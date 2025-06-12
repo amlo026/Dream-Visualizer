@@ -11,7 +11,7 @@ This Streamlit app uses **Google's Gemini AI** to interpret dreams, generate a s
 
 ## How It Works
 1. **User types a dream** (e.g., "I was running through a forest being chased by shadows").
-2. AI responds with:
+2. **AI responds with**:
    - Interpretation of the dream
    - AI-generated visual art
    - A music theme to represent the emotional tone of the dream
