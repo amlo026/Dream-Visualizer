@@ -47,3 +47,17 @@ streamlit run dream_diary_app_fixed_v4.py
 ```
 
 ---
+
+
+## Collaborators
+
+This project is a collaboration between:
+- [@unknowncurt](https://github.com/unknowncurt)
+- [@AmLo](https://github.com/amlo026)
+- [@Melodiehc](https://github.com/melodiehc)
+
+Instructors :
+-   @scharffc
+-   @kaleema
+-   @stephsicilian
+
