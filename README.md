@@ -23,3 +23,27 @@ This Streamlit app uses **Google's Gemini AI** to interpret dreams, generate a s
 - [Google Generative AI](https://ai.google.dev/)
 - [Gemini 1.5 Flash](https://ai.google.dev/gemini-api/docs)
 - Python, dotenv, Pillow
+
+##  Setup Instructions
+
+1. Clone or download the project.
+
+2. Create a `.env` file in the same directory as the app:
+
+```
+API_KEY=your_google_api_key_here
+```
+
+3. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the app:
+
+```bash
+streamlit run dream_diary_app_fixed_v4.py
+```
+
+---
