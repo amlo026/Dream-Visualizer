@@ -141,7 +141,7 @@ display(Audio(dream_music_file))
 
 # !pip install streamlit -q
 
-!pip install python-dotenv -q
+# !pip install python-dotenv -q
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
