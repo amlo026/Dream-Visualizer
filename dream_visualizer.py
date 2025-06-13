@@ -275,8 +275,8 @@ display(Audio(dream_music_file))
 #     else:
 #         st.warning("Please enter your dream description to generate insights.")
 
-!npm install localtunnel -q
+# !npm install localtunnel -q
 
-!streamlit run app.py &>/content/logs.txt & curl ipv4.icanhazip.com
+# !streamlit run app.py &>/content/logs.txt & curl ipv4.icanhazip.com
 
-!npx localtunnel --port 8501
+# !npx localtunnel --port 8501
