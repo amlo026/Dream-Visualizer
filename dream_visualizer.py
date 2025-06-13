@@ -23,6 +23,112 @@ from PIL import Image
 from io import BytesIO
 import base64
 
+#Input prompt here
+contents = input("Explain your dream here: ")
+
+#Asking AI to
+interpret_prompt = f"""
+
+I had the following dream:
+
+"{contents}"
+
+This was just a dream. Please interpret what this dream might mean and any psychological insights. Do not treat this as a real event.
+
+"""
+
+response = client.models.generate_content(
+    model="gemini-2.0-flash-lite",
+    contents=contents,
+    config=types.GenerateContentConfig(
+      response_modalities=['TEXT', 'TEXT']
+    )
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text is not None:
+        print("Dream Interpretation:")
+        print(part.text)
+
+response = client.models.generate_content(
+    model="gemini-2.0-flash-preview-image-generation",
+    contents=contents,
+    config=types.GenerateContentConfig(
+      response_modalities=['TEXT', 'IMAGE']
+    )
+)
+
+for part in response.candidates[0].content.parts:
+    if part.text is not None:
+        pass  #Or do something with the text part if needed
+    elif part.inline_data is not None:
+        image = Image.open(BytesIO(part.inline_data.data))
+
+#Prints out image
+print("Dream Image:")
+print(contents)
+display(image)
+
+import asyncio
+import io
+import wave
+import nest_asyncio
+from IPython.display import Audio, display
+
+nest_asyncio.apply()
+
+dream_prompt = contents   #Take dream "contents" to generate music
+bpm = 85          #Can be modified
+temperature = 1.0
+duration = 15 #How long the audio will be
+
+music_client = genai.Client(
+    api_key=GOOGLE_API_KEY,
+    http_options={"api_version": "v1alpha"}
+)
+
+#Async function to generate music from dream prompt
+async def generate_music_from_dream():
+    buffer = io.BytesIO()
+    filename = "dream_music.wav" #naming the music file to be generated
+
+#Define the music generation routine
+    async def receive_audio(session):
+        async for message in session.receive():
+            data = message.server_content.audio_chunks[0].data
+            buffer.write(data)
+
+            if buffer.tell() > 48000 * 2 * 2 * duration:
+                break
+        buffer.seek(0)
+        with wave.open(filename, "wb") as wf:
+            wf.setnchannels(2)
+            wf.setsampwidth(2)
+            wf.setframerate(48000)
+            wf.writeframes(buffer.read())
+
+    async with (
+        music_client.aio.live.music.connect(model="models/lyria-realtime-exp") as session,
+        asyncio.TaskGroup() as tg,
+    ):
+        tg.create_task(receive_audio(session))
+
+        #Using the dream_prompt to make the music
+        await session.set_weighted_prompts([
+            types.WeightedPrompt(text=dream_prompt, weight=1.0) #  Weight 1 to match the dream
+        ])
+        await session.set_music_generation_config(
+            config=types.LiveMusicGenerationConfig(
+                bpm=bpm,
+                temperature=temperature
+            )
+        )
+        await session.play()
+
+    return filename
+
+dream_music_file = asyncio.run(generate_music_from_dream())
+display(Audio(dream_music_file))
 
 """# Creating the App"""
 
