@@ -22,11 +22,6 @@ from google.generativeai import types
 from PIL import Image
 from io import BytesIO
 import base64
-
-GOOGLE_API_KEY = userdata.get('GOOGLE_API_KEY')
-
-client = genai.Client(api_key=GOOGLE_API_KEY)
-
 #Input prompt here
 contents = input("Explain your dream here: ")
 
