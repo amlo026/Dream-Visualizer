@@ -36,7 +36,7 @@ This Streamlit app uses **Google's Gemini AI** to interpret dreams, generate a s
 GOOGLE_API_KEY = "replace_with_your_api_key"
 ```
 
-4. Make sure to save the contents of the file
+4. Be sure to save the contents of the file
 
 ---
 
