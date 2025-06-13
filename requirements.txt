@@ -1,4 +1,0 @@
-streamlit
-google-genai
-nest_asyncio
-Pillow
