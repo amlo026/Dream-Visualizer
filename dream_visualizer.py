@@ -18,7 +18,7 @@ Original file is located at
 
 #Import statements
 import google.generativeai as genai
-from google.genai import types
+from google.generativeai import types
 from PIL import Image
 from io import BytesIO
 from IPython.display import display, clear_output
