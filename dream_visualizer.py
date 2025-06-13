@@ -139,7 +139,7 @@ display(Audio(dream_music_file))
 
 """# Creating the App"""
 
-!pip install streamlit -q
+# !pip install streamlit -q
 
 !pip install python-dotenv -q
 
