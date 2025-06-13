@@ -17,7 +17,6 @@ Original file is located at
 #making it easier to remember, understand, and express those experiences."
 
 #Import statements
-!pip install Pillow -q
 from google import genai
 from google.genai import types
 from PIL import Image
