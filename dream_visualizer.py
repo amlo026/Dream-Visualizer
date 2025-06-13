@@ -134,7 +134,7 @@ async def generate_music_from_dream():
 
     return filename
 
-dream_music_file = await generate_music_from_dream()
+dream_music_file = asyncio.run(generate_music_from_dream())
 display(Audio(dream_music_file))
 
 """# Creating the App"""
