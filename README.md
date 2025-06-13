@@ -26,8 +26,10 @@ This Streamlit app uses **Google's Gemini AI** to interpret dreams, generate a s
 
 ##  Setup Instructions
 
-1. Clone or download the project.
-
+1. Clone or download the project:
+```bash
+https://colab.research.google.com/drive/1hv6s1zg5k0EJHqnrPCFt-C6tAjFE9LIQ?usp=sharing
+```
 2. Create a `.streamlit` folder in the directory:
 
 3. Make secrets.toml file in that folder:
