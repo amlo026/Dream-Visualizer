@@ -28,23 +28,15 @@ This Streamlit app uses **Google's Gemini AI** to interpret dreams, generate a s
 
 1. Clone or download the project.
 
-2. Create a `.env` file in the same directory as the app:
+2. Create a `.streamlit` folder in the directory:
 
-```
-API_KEY=your_google_api_key_here
-```
-
-3. Install dependencies:
+3. Make secrets.toml file in that folder:
 
 ```bash
-pip install -r requirements.txt
+GOOGLE_API_KEY = "replace_with_your_api_key"
 ```
 
-4. Run the app:
-
-```bash
-streamlit run dream_diary_app_fixed_v4.py
-```
+4. Make sure to save the contents of the file
 
 ---
 
