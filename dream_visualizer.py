@@ -17,7 +17,7 @@ Original file is located at
 #making it easier to remember, understand, and express those experiences."
 
 #Import statements
-from google import genai
+import google.generativeai as genai
 from google.genai import types
 from PIL import Image
 from io import BytesIO
