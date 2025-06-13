@@ -21,7 +21,6 @@ import google.generativeai as genai
 from google.generativeai import types
 from PIL import Image
 from io import BytesIO
-from IPython.display import display, clear_output
 import base64
 
 from google.colab import userdata
