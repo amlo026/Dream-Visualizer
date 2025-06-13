@@ -139,7 +139,6 @@ display(Audio(dream_music_file))
 
 """# Creating the App"""
 
-# Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
 # import streamlit as st
 # from google import genai
@@ -151,7 +150,7 @@ display(Audio(dream_music_file))
 # import io
 # import wave
 # import nest_asyncio
-# from IPython.display import Audio, display #Note: IPython.display is not directly used in Streamlit, will need to adapt
+
 # 
 # #Apply compatibility with asyncio in environments like Colab (if running Streamlit within Colab)
 # nest_asyncio.apply()
@@ -210,7 +209,7 @@ display(Audio(dream_music_file))
 #     return filename
 # 
 # #Streamlit UI
-# st.title("Dream-to-Visual Diary")
+# st.title("Dream Visualizer")
 # 
 # st.markdown("""
 # This app uses AI to take written dreams, provides an interpretation of it, and creates an image and audio to
