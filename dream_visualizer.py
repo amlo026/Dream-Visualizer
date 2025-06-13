@@ -139,10 +139,6 @@ display(Audio(dream_music_file))
 
 """# Creating the App"""
 
-# !pip install streamlit -q
-
-# !pip install python-dotenv -q
-
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
 # import streamlit as st
@@ -274,9 +270,3 @@ display(Audio(dream_music_file))
 # 
 #     else:
 #         st.warning("Please enter your dream description to generate insights.")
-
-# !npm install localtunnel -q
-
-# !streamlit run app.py &>/content/logs.txt & curl ipv4.icanhazip.com
-
-# !npx localtunnel --port 8501
