@@ -23,8 +23,6 @@ from PIL import Image
 from io import BytesIO
 import base64
 
-from google.colab import userdata
-
 GOOGLE_API_KEY = userdata.get('GOOGLE_API_KEY')
 
 client = genai.Client(api_key=GOOGLE_API_KEY)
